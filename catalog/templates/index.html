@@ -1,0 +1,20 @@
+<!-- This code extends our base template on the first line, and then replaces the default content block for the template.  -->
+
+{% extends "base_generic.html" %}
+
+{% block content %}
+  <h1>Local Library Home</h1>
+  <p>Welcome to LocalLibrary, a website developed by <em>IVAN</em>!</p>
+  <h2>Dynamic content</h2>
+  <p>The library has the following record counts:</p>
+  <ul>
+    <li><strong>Books:</strong> {{ num_books }}</li>
+    <li><strong>Copies:</strong> {{ num_instances }}</li>
+    <li><strong>Copies available:</strong> {{ num_instances_available }}</li>
+    <li><strong>Authors:</strong> {{ num_authors }}</li>
+    <p></p>
+    <li><strong>Sherlock Books:</strong> {{ num_books_sherlock }}</li>
+  </ul>
+  <p>You have visited this page <strong>{{ num_visits }}</strong>{% if num_visits == 1 %} time{% else %} times{% endif %}.</p>
+
+{% endblock %}
